@@ -6,6 +6,7 @@ import numpy as np
 import plotly.express as px
 import joblib
 from gradientai import Gradient
+import pickle
 
 # Load the dataset with a specified encoding
 data_cleaned = pd.read_csv('cleaneddata.csv', encoding='latin1')
@@ -64,17 +65,16 @@ def machine_learning_modeling():
 
     # Predict button
     if st.button("Predict"):
-        # Load the trained model
-        model = joblib.load('random_forest_regressor_model.pkl')
-
+       with open('random_forest_regressor_model.pkl', 'rb') as f:
+           model = pickle.load(f)
         # Prepare input data for prediction
-        input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
+            input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
 
         # Make prediction
-        prediction = np.round(model.predict(input_data))
+            prediction = np.round(model.predict(input_data))
 
         # Display the prediction
-        st.success(f"Predicted Donation Bags: {prediction[0]}")
+            st.success(f"Predicted Donation Bags: {prediction[0]}")
 
         # You can add additional information or actions based on the prediction if needed
 # Page 4: Neighbourhood Mapping
