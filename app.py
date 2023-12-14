@@ -70,12 +70,12 @@ def machine_learning_modeling():
         from sklearn.neighbors import KNeighborsRegressor
         model = KNeighborsRegressor(n_neighbors=5)  # You can adjust the number of neighbors
         model.fit(X_train, y_train)
+        y_pred_knn = model.predict(X_test)
         # Load the trained model
 #model = joblib.load('k_nearest_neighbor_regressor_model.pkl')
 
         # Prepare input data for prediction
-        input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
-
+        input_data = [[adult_volunteers, youth_volunteers, time_spent, completed_routes, routes_completed , doors_in_route]] 
         # Make prediction
         prediction = model.predict(input_data)
 
