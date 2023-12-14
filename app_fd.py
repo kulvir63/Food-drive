@@ -69,12 +69,8 @@ def machine_learning_modeling():
            model = pickle.load(f)
         # Prepare input data for prediction
            input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
-
-        # Make prediction
-            prediction = np.round(model.predict(input_data))
-
-        # Display the prediction
-            st.success(f"Predicted Donation Bags: {prediction[0]}")
+           prediction = np.round(model.predict(input_data))
+           st.success(f"Predicted Donation Bags: {prediction[0]}")
 
         # You can add additional information or actions based on the prediction if needed
 # Page 4: Neighbourhood Mapping
