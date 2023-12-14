@@ -63,7 +63,7 @@ def machine_learning_modeling():
 
         from sklearn.model_selection import train_test_split
         
-        X = data_cleaned.drop(columns=['Donation Bags Collected','Location','Ward/Branch','Stake'])
+        X = data_cleaned.drop(columns=['Donation Bags Collected','Location','Ward/Branch','Stake','Unnamed: 0'])
         y = data_cleaned['Donation Bags Collected']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
