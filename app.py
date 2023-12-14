@@ -60,8 +60,18 @@ def machine_learning_modeling():
 
     # Predict button
     if st.button("Predict"):
+
+        from sklearn.model_selection import train_test_split
+        
+        X = data_cleaned.drop(columns=['Donation Bags Collected','Location','Ward/Branch','Stake'])
+        y = data_cleaned['Donation Bags Collected']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+        from sklearn.neighbors import KNeighborsRegressor
+        model = KNeighborsRegressor(n_neighbors=5)  # You can adjust the number of neighbors
+        model.fit(X_train, y_train)
         # Load the trained model
-        model = joblib.load('k_nearest_neighbor_regressor_model.pkl')
+#model = joblib.load('k_nearest_neighbor_regressor_model.pkl')
 
         # Prepare input data for prediction
         input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
