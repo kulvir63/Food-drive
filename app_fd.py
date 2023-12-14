@@ -68,7 +68,7 @@ def machine_learning_modeling():
        with open('random_forest_regressor_model.pkl', 'rb') as f:
            model = pickle.load(f)
         # Prepare input data for prediction
-            input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
+           input_data = [[completed_routes, routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
 
         # Make prediction
             prediction = np.round(model.predict(input_data))
