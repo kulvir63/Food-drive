@@ -135,7 +135,7 @@ def map_generation_google():
 
     # Embedding Google Map using HTML iframe
     st.markdown("""
-     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1g_sjW6HnmJHMVdneYavOh5sLf-UKbyQ&ehbc=2E312F" width="640" height="480"></iframe>
+     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1g_sjW6HnmJHMVdneYavOh5sLf-UKbyQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
     """, unsafe_allow_html=True)
 
 # Page 5: Data Collection
