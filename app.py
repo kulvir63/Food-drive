@@ -142,8 +142,10 @@ def map_generation_google():
 def data_collection():
     st.title("Data Collection")
     st.write("Please fill out the Google form to contribute to our Food Drive!")
-    google_form_url = "https://forms.gle/NQX4z9WwqhJaeUFV8"#YOUR_GOOGLE_FORM_URL_HERE
-    st.markdown(f"[Fill out the form]({google_form_url})")
+    st.markdown("""
+     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScurJAxkfSJSDfn3CXgGvJp8oPpv5kPCwACA1GR6vSLPTrONg/viewform?embedded=true" width="640" height="924" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    """, unsafe_allow_html=True)
+    
 
 # Page 6: Chatbot
 os.environ['GRADIENT_ACCESS_TOKEN'] = st.secrets["GRADIENT_ACCESS_TOKEN"]
